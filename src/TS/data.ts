@@ -1,8 +1,8 @@
 import Decimal from 'break_eternity.js'
-const D = x => new Decimal(x)
 //create all the variables in a data object for saving
 function getDefaultObject() {
     return {
+        voidAmts: [new Decimal(0)],
         time: Date.now(),
         currentUpdate: 'v0.6.1',
         devSpeed: 1,
@@ -23,7 +23,7 @@ function fixSave(main=getDefaultObject(), data) {
     if (typeof data === "object") {
         Object.keys(data).forEach(i => {
             if (main[i] instanceof Decimal) {
-                main[i] = D(data[i]!==null?data[i]:main[i])
+                main[i] = new Decimal(data[i]!==null?data[i]:main[i])
             } else if (typeof main[i]  == "object") {
                 fixSave(main[i], data[i])
             } else {
@@ -57,6 +57,7 @@ window.setInterval(function(){
 window.onload = function (){
     load()
 }
+export {data};
 //full reset
 function fullReset(){
     exportSave()

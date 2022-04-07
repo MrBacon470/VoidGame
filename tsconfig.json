@@ -13,6 +13,7 @@
           "dom"
       ],
       "strict": true,
+      "noImplicitAny": false,
       "strictNullChecks": false,
       "noUnusedLocals": true,
       "noUnusedParameters": true,

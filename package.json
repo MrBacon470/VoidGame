@@ -1,17 +1,24 @@
 {
   "files": [
-      "src/"
+    "src/"
   ],
   "scripts": {
-      "dev": "parcel serve src/index.html",
-      "build": "cross-env NODE_ENV=production parcel build src/index.html --public-url .",
-      "predeploy": "npm run build",
-      "deploy": "gh-pages -d dist"
+    "dev": "parcel serve src/index.html",
+    "build": "cross-env NODE_ENV=production parcel build src/index.html --public-url .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "eslint": "eslint"
   },
   "devDependencies": {
-      "cross-env": "^5.2.0",
-      "gh-pages": "^1.2.0",
-      "parcel-bundler": "^1.9.7",
-      "typescript": "^2.9.2"
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^8.12.0",
+    "gh-pages": "^1.2.0",
+    "parcel-bundler": "^1.9.7",
+    "typescript": "^2.9.2"
+  },
+  "dependencies": {
+    "break_eternity.js": "^1.2.5"
   }
 }

@@ -1,5 +1,6 @@
-//Credit to Acamadea
-function exponentialFormat(num, precision, mantissa = true) {
+//Original .js file from Acamadea
+import Decimal from 'break_eternity.js';
+function exponentialFormat(num:any, precision:number, mantissa:boolean = true) {
     let e = num.log10().floor()
     let m = num.div(Decimal.pow(10, e))
     if (m.toStringWithDecimalPlaces(precision) === 10) {
@@ -12,7 +13,7 @@ function exponentialFormat(num, precision, mantissa = true) {
     else return "e" + e
 }
 
-function commaFormat(num, precision) {
+function commaFormat(num:any, precision:number) {
     if (num === null || num === undefined) return "NaN"
     if (num.mag < 0.001) return (0).toFixed(precision)
     let init = num.toStringWithDecimalPlaces(precision)
@@ -23,24 +24,13 @@ function commaFormat(num, precision) {
 }
 
 
-function regularFormat(num, precision) {
+function regularFormat(num:any, precision:number,) {
     if (num === null || num === undefined) return "NaN"
     if (num.mag < 0.0001) return (0).toFixed(precision)
     if (num.mag < 0.1 && precision !==0) precision = Math.max(precision, 4)
     return num.toStringWithDecimalPlaces(precision)
 }
-
-function fixValue(x, y = 0) {
-    return x || new Decimal(y)
-}
-
-function sumValues(x) {
-    x = Object.values(x)
-    if (!x[0]) return new Decimal(0)
-    return x.reduce((a, b) => Decimal.add(a, b))
-}
-
-function format(decimal, precision = 2) {
+export function format(decimal:any, precision:number = 2) : string {
     decimal = new Decimal(decimal)
         if (isNaN(decimal)) return  '[ERROR]: NaN'
         if (decimal.sign < 0) return "-" + format(decimal.neg(), precision)
@@ -65,14 +55,14 @@ function format(decimal, precision = 2) {
             return format(decimal, precision) + "⁻¹"
 }
 
-function formatWhole(decimal) {
+export function formatWhole(decimal:any) {
     decimal = new Decimal(decimal)
     if (decimal.gte(1e9)) return format(decimal, 2)
     if (decimal.lte(0.99) && !decimal.eq(0)) return format(decimal, 2)
     return format(decimal, 0)
 }
 
-function formatTime(s) {
+export function formatTime(s:number) {
     if (s < 60) return format(s) + "s"
     else if (s < 3600) return formatWhole(Math.floor(s / 60)) + "m " + format(s % 60) + "s"
     else if (s < 86400) return formatWhole(Math.floor(s / 3600)) + "h " + formatWhole(Math.floor(s / 60) % 60) + "m " + format(s % 60) + "s"
@@ -80,7 +70,7 @@ function formatTime(s) {
     else return formatWhole(Math.floor(s / 31536000)) + "y " + formatWhole(Math.floor(s / 86400) % 365) + "d " + formatWhole(Math.floor(s / 3600) % 24) + "h " + formatWhole(Math.floor(s / 60) % 60) + "m " + format(s % 60) + "s"
 }
 
-function toPlaces(x, precision, maxAccepted) {
+function toPlaces(x:Decimal, precision:number, maxAccepted:number) {
     x = new Decimal(x)
     let result = x.toStringWithDecimalPlaces(precision)
     if (new Decimal(result).gte(maxAccepted)) {
@@ -90,11 +80,11 @@ function toPlaces(x, precision, maxAccepted) {
 }
 
 // Will also display very small numbers
-function formatSmall(x, precision=2) {
-    return format(x, precision, true)
+function formatSmall(x:any, precision=2) {
+    //return format(x, precision, true)
 }
 
-function invertOOM(x){
+function invertOOM(x:Decimal){
     let e = x.log10().ceil()
     let m = x.div(Decimal.pow(10, e))
     e = e.neg()

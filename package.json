@@ -3,7 +3,7 @@
       "src/"
   ],
   "scripts": {
-      "start": "parcel serve src/index.html",
+      "dev": "parcel serve src/index.html",
       "build": "cross-env NODE_ENV=production parcel build src/index.html --public-url .",
       "predeploy": "npm run build",
       "deploy": "gh-pages -d dist"

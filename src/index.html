@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
     <title>TS Moment</title>
 </head>
 <body>
-    <div id="voidAmts"></div>
-    <div>Confused Noises</div>
+    <div id="header" class="flexBox" style="flex-direction:row; margin-top: 4vh;">
+        <div class="currencyHolder">
+            <img src="images/V.png">
+            <div id="voidAmtText"></div>
+        </div>
+    </div>
+    <div id="tabHolder" class="flexBox" style="flex-direction:row; margin-top: 2vh;">
+        <button style="margin-right: 10px;">Void Area</button>
+        <button style="margin-right: 10px;">Golden Voids</button>
+    </div>
 </body>
     <script src="TS/Data.ts"></script>
     <script src="TS/Cache.ts"></script>

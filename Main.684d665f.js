@@ -3247,7 +3247,7 @@ function getDefaultObject() {
     void: exports.D(0),
     time: Date.now(),
     devSpeed: 1,
-    currentTab: 1
+    currentTab: 0
   };
 } //this is for variables that aren't saved
 
@@ -3481,8 +3481,7 @@ function mainLoop() {
   var diff = (Date.now() - Data_1.globalData.time) * Data_1.globalData.devSpeed / 1000;
   Data_1.globalData.time = Date.now();
   Data_1.globalData.void = Data_1.globalData.void.plus(1 * diff);
-  Cache_1.DOMCacheGetOrSet("voidAmts").innerHTML = "" + Formatting_1.format(Data_1.globalData.void);
-  console.log(diff);
+  Cache_1.DOMCacheGetOrSet("voidAmtText").innerHTML = "" + Formatting_1.format(Data_1.globalData.void);
 }
 
 window.onload = function () {
@@ -3520,7 +3519,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60681" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60789" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

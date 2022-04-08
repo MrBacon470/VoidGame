@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'Roboto Mono';
+    src: url('/RobotoMono-Medium.c79901ab.ttf');
+}
+
+*   {
+    font-family: 'Roboto Mono';
+    color:whitesmoke;
+    background-color: rgb(64, 64, 64);
+    align-content: center;
+}
+
+img {
+    width: 32px;
+    height: 32px;
+}
+
+.flexBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.currencyHolder {
+    display: flex; 
+    justify-content: flex-start; 
+    align-items: center; 
+    min-width: 146px; 
+    margin-right: 40px;
+}
+
+
+
+/*# sourceMappingURL=/style.0e565bc9.css.map */

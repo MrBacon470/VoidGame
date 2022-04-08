@@ -6,7 +6,7 @@ function getDefaultObject() {
         void: D(0),
         time: Date.now(),
         devSpeed: 1,
-        currentTab: 1,
+        currentTab: 0,
     }
 }
 //this is for variables that aren't saved

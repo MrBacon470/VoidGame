@@ -1,1 +1,0 @@
-{"version":3,"sources":["main.ts"],"names":[],"mappings":";AACA,aADA,IAAM,EAAY,SAAS,eAAe,aAC1C,EAAU,UAAY","file":"main.d9079863.js","sourceRoot":"..\\src","sourcesContent":["const container = document.getElementById('container');\r\ncontainer.innerHTML = `Hello World from TypeScript!`;"]}

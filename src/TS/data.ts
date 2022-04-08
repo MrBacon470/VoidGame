@@ -63,9 +63,7 @@ function importSave(){
 window.setInterval(function(){
     save()
 }, 10000);
-window.onload = function (){
-    load()
-}
+
 //full reset
 function fullReset(){
     exportSave()

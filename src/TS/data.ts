@@ -3,16 +3,18 @@ export const D = (x: DecimalSource | undefined) => new Decimal(x)
 //create all the variables in a globalData object for saving
 function getDefaultObject() {
     return {
-        void: D(0),
+        void: [D(0),D(0),D(0),D(0)],
+        voidUps: [[D(0),D(0),D(0),D(0)],[D(0),D(0),D(0),D(0)],[D(0),D(0),D(0),D(0)],[D(0),D(0),D(0),D(0)]],
         time: Date.now(),
         devSpeed: 1,
+        hasTab: [false],
         currentTab: 0,
     }
 }
 //this is for variables that aren't saved
 function defaultTempVars() {
     return {
-        //No temp yet
+        voidGains: [D(0),D(0),D(0),D(0)],
     }
 }
 export let globalTemp = defaultTempVars()

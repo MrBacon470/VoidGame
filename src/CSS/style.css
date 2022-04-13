@@ -3,6 +3,10 @@
     src: url('./RobotoMono-Medium.ttf');
 }
 
+:root {
+    --void-color: #1888cf;
+}
+
 *   {
     font-family: 'Roboto Mono';
     color:whitesmoke;
@@ -13,6 +17,15 @@
 img {
     width: 32px;
     height: 32px;
+}
+
+button {
+    border: 2px solid;
+    transition-duration: 0.2s;
+}
+
+button:hover {
+    transition-duration: 0.2s;
 }
 
 .flexBox {
@@ -29,4 +42,10 @@ img {
     min-width: 146px; 
     margin-right: 40px;
 }
+/*Void Area Styling*/
+#voidTB {border-color:var(--void-color);}
+#voidTB:hover {background-color: var(--void-color);}
+#voidAmtText {color:var(--void-color);}
+.vu {border:2px solid var(--void-color);margin: 1vh;}
+.vu:hover {background-color:var(--void-color);}
 

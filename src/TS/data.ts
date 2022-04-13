@@ -1,9 +1,9 @@
-import Decimal, { DecimalSource } from 'break_eternity.js';
+import Decimal, {DecimalSource} from "break_eternity.js";
 export const D = (x: DecimalSource | undefined) => new Decimal(x)
 //create all the variables in a globalData object for saving
 function getDefaultObject() {
     return {
-        void: [D(0),D(0),D(0),D(0)],
+        void: [D(10),D(0),D(0),D(0)],
         voidUps: [[D(0),D(0),D(0),D(0)],[D(0),D(0),D(0),D(0)],[D(0),D(0),D(0),D(0)],[D(0),D(0),D(0),D(0)]],
         time: Date.now(),
         devSpeed: 1,
@@ -15,6 +15,7 @@ function getDefaultObject() {
 function defaultTempVars() {
     return {
         voidGains: [D(0),D(0),D(0),D(0)],
+        voidUpCosts: [[D(10),D(100),D(1e3),D(1e4)]]
     }
 }
 export let globalTemp = defaultTempVars()
